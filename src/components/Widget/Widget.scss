@@ -1,0 +1,19 @@
+.widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 300px;
+  width: 200px;
+  border: 1px solid #333;
+  padding: 20px;
+  background: #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.widget-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
