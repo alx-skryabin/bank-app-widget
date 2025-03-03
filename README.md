@@ -11,7 +11,7 @@ Open [localhost:3300](http://localhost:3300) to view it in the browser.
 
 Build the project in `production` mode. <br/>
 After the build, two files will be available in the `dist` folder: <br/>
-[bank-just-widget.css](dist/bank-just-widget.css) и [bank-just-widget.js](dist/bank-just-widget.js)
+[bank-app-widget.css](dist/bank-app-widget.css) и [bank-app-widget.js](dist/bank-app-widget.js)
 
 ### `npm run format:prettier`
 
@@ -23,7 +23,7 @@ To use the widget, you need to place a `script` on your html or other page. <br/
 
 ```html
 <!-- Your_html_page.html-->
-<script src="@cdn/bank-just-widget.js?client=xxxx" />
+<script src="@cdn/bank-app-widget.js?client=xxxx" />
 ```
 
 ### Stack:

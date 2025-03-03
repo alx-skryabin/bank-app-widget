@@ -1,5 +1,5 @@
 {
-  "name": "bank-just-widget",
+  "name": "bank-app-widget",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --mode development",

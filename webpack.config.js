@@ -8,7 +8,7 @@ module.exports = (env, argv) => {
     entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bank-just-widget.js',
+      filename: 'bank-app-widget.js',
       library: 'BankJustWidget',
       libraryTarget: 'umd',
       clean: true
@@ -52,7 +52,7 @@ module.exports = (env, argv) => {
     plugins: isProduction
       ? [
           new MiniCssExtractPlugin({
-            filename: 'bank-just-widget.css'
+            filename: 'bank-app-widget.css'
           })
         ]
       : [],
