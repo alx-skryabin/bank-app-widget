@@ -1,3 +1,14 @@
-.header {
-  border-bottom: 1px solid darkgreen;
+.wdg__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+
+  .wdg__icon {
+    color: tomato;
+  }
+
+  .wdg__title {
+    font-size: 1.1em;
+  }
 }

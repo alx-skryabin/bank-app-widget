@@ -1,12 +1,12 @@
-import React from 'react';
-import './Button.scss';
+import React from 'react'
+import './Button.scss'
 
 interface ButtonProps {
-  title: string;
-  isPink?: boolean;
+  title: string
+  isPink?: boolean
 }
 
-const Button = ({ title, isPink }: ButtonProps) => {
+const Button = ({title, isPink}: ButtonProps) => {
   const [count, setCount] = React.useState(0)
 
   return (
@@ -15,7 +15,7 @@ const Button = ({ title, isPink }: ButtonProps) => {
     }}>
       {title} - {count}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

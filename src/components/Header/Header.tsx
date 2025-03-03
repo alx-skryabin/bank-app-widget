@@ -1,18 +1,19 @@
-import React from 'react';
-import './Header.scss';
+import React from 'react'
+import Button from '../Button/Button'
+import './Header.scss'
 
-
-const Header = () => {
+const Header = ({clientId}: { clientId: string }) => {
   return (
-    <div className="header">
-      <div className="icon">
+    <div className="wdg__header">
+      <div className="wdg__icon">
         <i className="fa-regular fa-heart"/>
       </div>
-      <div className="title">
-        <h2>User Name</h2>
+      <div className="wdg__title">
+        Client Id: {clientId}
       </div>
+      <Button title="Count"/>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
