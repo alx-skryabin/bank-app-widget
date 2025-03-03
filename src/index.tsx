@@ -1,8 +1,8 @@
 import React from 'react'
 import {createRoot} from 'react-dom/client'
 import {createShadowRoot} from './tools/createShadowRoot'
-import {createContainerEl, parseWidgetUrl} from "./tools/helper"
-import App from "./App"
+import {createContainerEl, parseWidgetUrl} from './tools/helper'
+import App from './App'
 import './styles/index.scss'
 
 const initWidget = () => {
@@ -11,7 +11,7 @@ const initWidget = () => {
   console.log('dataUrl', dataUrl)
 
   if (!dataUrl.clientId) {
-    return console.warn('WIDGET:::The Client\'s ID has not been transferred')
+    return console.warn("WIDGET:::The Client's ID has not been transferred")
   }
 
   let container: Element = createContainerEl()
@@ -22,12 +22,10 @@ const initWidget = () => {
   }
 
   const root = createRoot(container)
-  root.render(<App clientId={dataUrl.clientId}/>)
+  root.render(<App clientId={dataUrl.clientId} />)
 }
 
 initWidget()
-
-
 
 // declare global {
 //   interface Window {

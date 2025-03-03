@@ -10,9 +10,12 @@ const Button = ({title, isPink}: ButtonProps) => {
   const [count, setCount] = React.useState(0)
 
   return (
-    <button className={`button ${isPink ? 'button-pink' : ''}`} onClick={() => {
-      setCount(count + 1)
-    }}>
+    <button
+      className={`button ${isPink ? 'button-pink' : ''}`}
+      onClick={() => {
+        setCount(count + 1)
+      }}
+    >
       {title} - {count}
     </button>
   )

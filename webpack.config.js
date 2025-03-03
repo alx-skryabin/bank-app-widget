@@ -1,8 +1,8 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env, argv) => {
-  const isProduction = argv.mode === 'production';
+  const isProduction = argv.mode === 'production'
 
   return {
     entry: './src/index.tsx',
@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
       filename: 'bank-just-widget.js',
       library: 'BankJustWidget',
       libraryTarget: 'umd',
-      clean: true,
+      clean: true
     },
     mode: isProduction ? 'production' : 'development',
     devtool: isProduction ? false : 'source-map',
@@ -20,7 +20,7 @@ module.exports = (env, argv) => {
         {
           test: /\.tsx?$/,
           use: 'ts-loader',
-          exclude: /node_modules/,
+          exclude: /node_modules/
         },
         {
           test: /\.scss$/,
@@ -31,35 +31,35 @@ module.exports = (env, argv) => {
               options: {
                 // Отключаем CSS-модули, так как вы используете прямые имена классов
                 modules: false,
-                sourceMap: !isProduction,
-              },
+                sourceMap: !isProduction
+              }
             },
             {
               loader: 'sass-loader',
               options: {
                 sourceMap: !isProduction,
                 // Используем современный API для Sass
-                api: 'modern',
-              },
-            },
-          ],
-        },
-      ],
+                api: 'modern'
+              }
+            }
+          ]
+        }
+      ]
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
+      extensions: ['.tsx', '.ts', '.js']
     },
     plugins: isProduction
       ? [
-        new MiniCssExtractPlugin({
-          filename: 'bank-just-widget.css',
-        }),
-      ]
+          new MiniCssExtractPlugin({
+            filename: 'bank-just-widget.css'
+          })
+        ]
       : [],
     devServer: {
       static: path.join(__dirname, 'public'),
       port: 3300,
       open: true
-    },
-  };
-};
+    }
+  }
+}

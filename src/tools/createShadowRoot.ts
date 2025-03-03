@@ -1,7 +1,7 @@
 import {createStylesheetEl} from './helper'
-import {base} from "../config/base";
+import {base} from '../config/base'
 
-export function createShadowRoot(container: Element,cssUrl: string): Element {
+export function createShadowRoot(container: Element, cssUrl: string): Element {
   const shadow = container.attachShadow({mode: 'closed'}) // or open
 
   // Создаем контейнер для React
