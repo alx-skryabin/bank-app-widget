@@ -1,4 +1,4 @@
-import {environment} from '../environment'
+import {base} from '../config/base'
 
 interface ParsedUrl {
   urlFull: string
@@ -44,7 +44,7 @@ export const parseWidgetUrl = (fullUrl: string): ParsedUrl => {
 
 export const createContainerEl = (): HTMLElement => {
   const root = document.createElement('div')
-  root.id = environment.rootSelectorId
+  root.id = base.rootSelectorId
   return root
 }
 

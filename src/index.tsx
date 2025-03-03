@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client'
 import {createShadowRoot} from './tools/createShadowRoot'
 import {createContainerEl, parseWidgetUrl} from "./tools/helper"
 import Widget from "./components/Widget/Widget"
-import './index.scss'
+import './styles/index.scss'
 
 const initWidget = () => {
   const scriptSrc = document.currentScript?.getAttribute('src') || ''
