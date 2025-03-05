@@ -24,7 +24,9 @@ const initWidget = () => {
   root.render(<App clientId={dataUrl.clientId} />)
 }
 
-initWidget()
+document.addEventListener('DOMContentLoaded', () => {
+  initWidget()
+})
 
 /*При необходимости можно добавить управление
  * инициализацией и т.д. через Window*/
