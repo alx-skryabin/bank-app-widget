@@ -11,9 +11,9 @@ const initWidget = () => {
       Array.from(document.getElementsByTagName('script')).find(script =>
         script.src.includes('bank-app-widget.js')
       )?.src || ''
-    console.log('scriptSrc', scriptSrc)
+    console.warn(':::scriptSrc', scriptSrc)
     const dataUrl = parseWidgetUrl(scriptSrc)
-    console.log('dataUrl', dataUrl)
+    console.warn(':::dataUrl', dataUrl)
 
     if (!dataUrl.clientId) {
       return console.warn("WIDGET:::The Client's ID has not been transferred")
@@ -35,12 +35,12 @@ const initWidget = () => {
 
 // Ждём, пока document.body будет готов
 const waitForBody = () => {
-  console.log('start waiting')
+  console.warn(':::start waiting')
   if (document.body) {
-    console.log('start')
+    console.warn(':::start')
     initWidget()
   } else {
-    console.log('not ready')
+    console.warn(':::not ready')
     setTimeout(waitForBody, 10) // Проверяем каждые 10мс
   }
 }

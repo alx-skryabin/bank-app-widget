@@ -1,10 +1,9 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const fileNameOutput = 'bank-app-widget'
-
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production'
+  const fileNameOutput = 'bank-app-widget'
 
   return {
     entry: './src/index.tsx',
