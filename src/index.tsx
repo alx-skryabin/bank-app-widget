@@ -8,7 +8,6 @@ import './styles/index.scss'
 const initWidget = () => {
   const scriptSrc = document.currentScript?.getAttribute('src') || ''
   const dataUrl = parseWidgetUrl(scriptSrc)
-  console.log('dataUrl', dataUrl)
 
   if (!dataUrl.clientId) {
     return console.warn("WIDGET:::The Client's ID has not been transferred")

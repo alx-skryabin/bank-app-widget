@@ -1,20 +1,87 @@
 @import 'bank-app-messenger/styles.css';
 
-body {
-  background: #749559;
-}
-
 .wdg__app {
+  $sizePointMobile: 480px;
+
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  height: 600px;
-  width: 400px;
-  border: 1px solid #eee;
-  border-radius: 15px;
-  background: #eee;
+  background: #1B2734;
+  font-family: 'Roboto Light', sans-serif;
   box-sizing: content-box;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+  transition: width 0.2s linear,
+  height 0.2s linear,
+  border-radius 0.3s linear,
+  transform 0.2s ease-in-out;
+
+  &.wdg__app-mini {
+    bottom: 20px;
+    right: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+
+    .wdg__welcome {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: rgba(255, 255, 255, 0.3);
+
+      .wdg__welcome-icon {
+        position: absolute;
+        color: #eee;
+      }
+    }
+  }
+
+  &.wdg__app-full {
+    bottom: 20px;
+    right: 20px;
+    height: 600px;
+    width: 400px;
+    border-radius: 15px;
+
+    .wdg__opened {
+      position: relative;
+      height: 100%;
+
+      .wdg__close {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 6px 6px 0 0;
+        top: -30px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 20px;
+        transition: 0.1s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.6);
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $sizePointMobile) {
+    &.wdg__app-full {
+      bottom: 5px;
+      right: 5px;
+      height: calc(100% - 40px);
+      width: calc(100% - 10px);
+    }
+  }
 }
