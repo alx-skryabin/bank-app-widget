@@ -6,29 +6,36 @@ import App from './App'
 import './styles/index.scss'
 
 const initWidget = () => {
-  const scriptSrc = document.currentScript?.getAttribute('src') || ''
-  const dataUrl = parseWidgetUrl(scriptSrc)
+  try {
+    const scriptSrc = document.currentScript?.getAttribute('src') || ''
+    const dataUrl = parseWidgetUrl(scriptSrc)
 
-  if (!dataUrl.clientId) {
-    return console.warn("WIDGET:::The Client's ID has not been transferred")
+    if (!dataUrl.clientId) {
+      return console.warn("WIDGET:::The Client's ID has not been transferred")
+    }
+
+    let container: Element = createContainerEl()
+    document.body.appendChild(container)
+
+    if (process.env.NODE_ENV === 'production') {
+      container = createShadowRoot(container, dataUrl.urlCSS)
+    }
+
+    const root = createRoot(container)
+    root.render(<App clientId={dataUrl.clientId} />)
+  } catch (error) {
+    console.warn('bank-app-widget', error)
   }
-
-  let container: Element = createContainerEl()
-  document.body.appendChild(container)
-
-  if (process.env.NODE_ENV === 'production') {
-    container = createShadowRoot(container, dataUrl.urlCSS)
-  }
-
-  const root = createRoot(container)
-  root.render(<App clientId={dataUrl.clientId} />)
 }
 
 // Ждём, пока document.body будет готов
 const waitForBody = () => {
+  console.log('start waiting')
   if (document.body) {
+    console.log('start')
     initWidget()
   } else {
+    console.log('not ready')
     setTimeout(waitForBody, 10) // Проверяем каждые 10мс
   }
 }
