@@ -1,5 +1,7 @@
 # Bank App Widget
 
+Demo [Widget](https://bank-app-widget.netlify.app/)
+
 ### Available Scripts:
 
 ### `npm run start`
@@ -35,4 +37,4 @@ To use the widget, you need to place a `script` on your html or other page. <br/
 
 ### Stack:
 
-`React` `TypeScript` `Sass` `Docker` `Prettier`
+`React` `TypeScript` `Sass` `Docker` `Prettier` `Netlify`

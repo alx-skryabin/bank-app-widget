@@ -1,5 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production'
@@ -50,13 +51,20 @@ module.exports = (env, argv) => {
     resolve: {
       extensions: ['.tsx', '.ts', '.js']
     },
-    plugins: isProduction
-      ? [
-          new MiniCssExtractPlugin({
-            filename: `${fileNameOutput}.css`
-          })
-        ]
-      : [],
+    plugins: [
+      ...(isProduction
+        ? [
+            new MiniCssExtractPlugin({
+              filename: `${fileNameOutput}.css`
+            })
+          ]
+        : []),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'public/index.html'), // Путь к исходному index.html
+        filename: 'index.html', // Имя выходного файла в dist
+        inject: false // Внедрять скрипты в конец <body> - 'body'
+      })
+    ],
     devServer: {
       static: path.join(__dirname, 'public'),
       port: 3300,
