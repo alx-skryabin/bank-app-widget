@@ -21,9 +21,16 @@ Commands for formatting and bringing code to accepted standards
 
 To use the widget, you need to place a `script` on your html or other page. <br/>
 
+# Deploy Netlify
+
+1. Run `format:prettier`
+2. You need to commit to the `release` branch.
+3. The deployment will `start automatically` - view detail on [Netlify](https://netlify.com)
+
 ```html
 <!-- Your_html_page.html-->
-<script src="@cdn/bank-app-widget.js?client=xxxx" />
+<!--Param client is required-->
+<script src="https://bank-app-widget.netlify.app/bank-app-widget.js?client=xxx"></script>
 ```
 
 ### Stack:
