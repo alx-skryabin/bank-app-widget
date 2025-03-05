@@ -1,6 +1,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const fileNameOutput = 'bank-app-widget'
+
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production'
 
@@ -8,7 +10,7 @@ module.exports = (env, argv) => {
     entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bank-app-widget.js',
+      filename: `${fileNameOutput}.js`,
       library: 'BankJustWidget',
       libraryTarget: 'umd',
       clean: true
@@ -52,7 +54,7 @@ module.exports = (env, argv) => {
     plugins: isProduction
       ? [
           new MiniCssExtractPlugin({
-            filename: 'bank-app-widget.css'
+            filename: `${fileNameOutput}.css`
           })
         ]
       : [],

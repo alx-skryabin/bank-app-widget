@@ -7,8 +7,13 @@ import './styles/index.scss'
 
 const initWidget = () => {
   try {
-    const scriptSrc = document.currentScript?.getAttribute('src') || ''
+    const scriptSrc =
+      Array.from(document.getElementsByTagName('script')).find(script =>
+        script.src.includes('bank-app-widget.js')
+      )?.src || ''
+    console.log('scriptSrc', scriptSrc)
     const dataUrl = parseWidgetUrl(scriptSrc)
+    console.log('dataUrl', dataUrl)
 
     if (!dataUrl.clientId) {
       return console.warn("WIDGET:::The Client's ID has not been transferred")
@@ -24,7 +29,7 @@ const initWidget = () => {
     const root = createRoot(container)
     root.render(<App clientId={dataUrl.clientId} />)
   } catch (error) {
-    console.warn('bank-app-widget', error)
+    console.warn('WIDGET_INIT:::', error)
   }
 }
 
