@@ -26,17 +26,10 @@ const initWidget = () => {
 
 initWidget()
 
+/*При необходимости можно добавить управление
+ * инициализацией и т.д. через Window*/
 // declare global {
 //   interface Window {
 //     BankJustWidget?: () => void
 //   }
-// }
-
-/*Не читает ClientID - разобраться*/
-// window.BankJustWidget = initWidget
-//
-// if (document.readyState === 'complete') {
-//   window.BankJustWidget()
-// } else {
-//   window.addEventListener('load', window.BankJustWidget)
 // }

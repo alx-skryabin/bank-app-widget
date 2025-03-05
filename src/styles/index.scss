@@ -6,20 +6,21 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  background: #1B2734;
+  background: #1b2734;
   font-family: 'Roboto Light', sans-serif;
   box-sizing: content-box;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
-  transition: width 0.2s linear,
-  height 0.2s linear,
-  border-radius 0.3s linear,
-  transform 0.2s ease-in-out;
+  transition:
+    width 0.2s linear,
+    height 0.2s linear,
+    border-radius 0.3s linear,
+    transform 0.2s ease-in-out;
 
   &.wdg__app-mini {
     bottom: 20px;
     right: 20px;
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     cursor: pointer;
     overflow: hidden;
