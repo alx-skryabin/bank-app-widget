@@ -24,9 +24,16 @@ const initWidget = () => {
   root.render(<App clientId={dataUrl.clientId} />)
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initWidget()
-})
+// Ждём, пока document.body будет готов
+const waitForBody = () => {
+  if (document.body) {
+    initWidget()
+  } else {
+    setTimeout(waitForBody, 10) // Проверяем каждые 10мс
+  }
+}
+
+waitForBody()
 
 /*При необходимости можно добавить управление
  * инициализацией и т.д. через Window*/
